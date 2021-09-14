@@ -1,0 +1,21 @@
+{% extends "app/login_page.html" %}
+{% block body_block %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+
+        <form method="POST" class="post-form">
+
+                {% csrf_token %}
+                <div>
+                    {{form.subject|as_crispy_field}}
+                    {{form.message|as_crispy_field}}
+
+                </div>
+
+            <br>
+            <input class="btn btn-primary" type="submit" value="Send Email">
+
+        </form>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "login_page.html" %}
+{% block body_block %}
+
+    <form class="form-group" action="{% url 'patient_problem' %}" method="POST">
+
+        {% csrf_token %}
+
+        <label for="specify" >Problem:</label>
+        <input id="specify" class="form-control" name="specify" placeholder="search by problem">
+        <br>
+
+        <input type="submit" class="btn btn-primary" value="Search">
+
+    </form>
+
+
+{% endblock %}

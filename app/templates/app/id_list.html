@@ -1,0 +1,18 @@
+{% extends "app/login_page.html" %}
+{% block body_block %}
+
+<form class="form-group" method="post" action="{% url 'patient_id' %}">
+
+        {% csrf_token %}
+
+        <label for="i">UID:</label>
+        <input class="form-control" id="i" name="i" placeholder="Search by UID">
+
+        <div class="row justify-content-center">
+                <input type="submit" class="btn btn-primary btn-lg">
+        </div>
+
+</form>
+
+
+{% endblock %}

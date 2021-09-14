@@ -1,0 +1,13 @@
+{% extends "app/login_page.html" %}
+{% block body_block %}
+
+<h1>Delete record of {{consult.problem}} ?</h1>
+<form method="POST">
+
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Delete">
+    <button type="button" class="btn btn-primary" onclick="javascript:history.back()">Cancel</button>
+
+</form>
+
+{% endblock %}

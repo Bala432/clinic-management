@@ -1,0 +1,28 @@
+{% extends "app/login_page.html" %}
+{% block body_block %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+
+        <form method="POST" class="post-form">
+
+                {% csrf_token %}
+                <div>
+                    {{form.uid|as_crispy_field}}
+                    {{form.name|as_crispy_field}}
+                    {{form.age|as_crispy_field}}
+                    {{form.gender|as_crispy_field}}
+                    {{form.email|as_crispy_field}}
+                    {{form.mobile|as_crispy_field}}
+                    {{form.area|as_crispy_field}}
+                    {{form.height|as_crispy_field}}
+                    {{form.weight|as_crispy_field}}
+                    {{form.bpi|as_crispy_field}}
+                </div>
+
+            <br>
+            <input class="btn btn-primary" type="submit" value="Register">
+
+        </form>
+
+    </div>
+{% endblock %}

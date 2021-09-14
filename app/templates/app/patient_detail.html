@@ -1,0 +1,57 @@
+{% extends "app/login_page.html" %}
+{% block body_block %}
+
+    <div class="jumbotron">
+
+        <div class="container">
+
+            <p>The Details of the patient are</p>
+
+            <p>UID: {{detail.uid}}</p>
+
+            <p>Name: {{detail.name}}</p>
+
+            <p>Age : {{detail.age}}</p>
+
+            <p>Gender:{{detail.gender}}</p>
+
+            {% ifequal detail.email '' %}
+                <p>Email Address :Not Entered</p>
+            {% else %}
+                <p>Email Address : {{detail.email}}</p>
+            {% endifequal %}
+            <p>Mobile Number : {{detail.mobile}}</p>
+
+            <p>Area:{{detail.area}}</p>
+
+            {% ifequal detail.height 0 %}
+                <p>Height:Not Entered</p>
+            {% else %}
+                <p>Height:{{detail.height}}</p>
+            {% endifequal %}
+            {% ifequal detail.weight 0 %}
+                <p>Weight:Not Entered</p>
+            {% else %}
+                <p>Weight:{{detail.weight}}</p>
+            {% endifequal %}
+            {% ifequal detail.bpi 0 %}
+                <p>BPI:Not Entered</p>
+            {% else %}
+                <p>BPI:{{detail.bpi}}</p>
+            {% endifequal %}
+
+
+        </div>
+
+    </div>
+
+<div class="container">
+    <a class="btn btn-primary" href="{% url 'add_record' pk=detail.pk %}">Add New Record</a>
+    <a class="btn btn-success" href="{% url 'list_record' pk=detail.pk %}">Records List</a>
+    <a class="btn btn-warning" href="{% url 'update_record' pk=detail.pk %}">Update Record</a>
+    <a class="btn btn-danger" href="{% url 'record_delete' pk=detail.pk %}">Delete Record</a>
+    <a class="btn btn-primary" href="{% url 'email' pk=detail.pk %}">Send Email</a>
+
+</div>
+
+{% endblock %}

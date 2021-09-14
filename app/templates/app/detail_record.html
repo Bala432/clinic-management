@@ -1,0 +1,15 @@
+{% extends "app/login_page.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>The Details of the visit are</h1>
+        <p>Problem:{{h.problem}}</p>
+        <p>Treatment:{{h.treatment}}</p>
+    </div>
+</div>
+
+    <a class="btn btn-warning" href="{% url 'record_person_delete' pk=h.pk %}">Delete Record</a>
+
+
+{% endblock %}

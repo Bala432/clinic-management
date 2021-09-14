@@ -1,0 +1,19 @@
+{% extends "app/login_page.html" %}
+{% block body_block %}
+
+<ol>
+
+    {% if list %}
+        <h1>Here are list of Patient Records</h1>
+        {% for i in list %}
+            <h2><li><a href="{{i.uid}}">{{i.name}}</a></li></h2>
+        {% endfor %}
+    {% else %}
+        <h3>No Records registered</h3>
+    {% endif %}
+
+</ol>
+
+
+
+{% endblock %}

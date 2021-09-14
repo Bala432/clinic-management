@@ -1,0 +1,21 @@
+{% extends "app/login_page.html" %}
+{% block body_block %}
+
+    {% if p %}
+
+    <ol>
+
+        {% for i in p %}
+
+                <h1><li><a href="{{i.uid}}">{{i.name}}</a> </li></h1>
+        {% endfor %}
+
+    </ol>
+    {% else %}
+        <h1>No Records Present</h1>
+    {% endif %}
+{% endblock %}
+
+
+
+
